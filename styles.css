@@ -12,16 +12,15 @@
     top:0;
     background: #372d3b;
     left:0;
-    font-family: raleway;
-    transition: all .5s;
+    font-family: meslo lg s;
+    transition: height .5s, background .5s;
 }
 .navbar-header {
   height: 80px;
-  transition: all .3s;
 }
 .navbar-header a {
-  transition: all .3s;
-  font-size: 22px;
+  transition: font-size .3s;
+  font-size: 16px;
 }
 .navbar-header.tiny {
     height:40px;
@@ -29,18 +28,13 @@
 }
 .navbar-header.tiny a{
     font-size: 16px;
-    transition: font-size .3s;
 }
 .navbar-header.tiny span{
     font-size: 22px;
-    left: 0
 }
 @media screen and (min-width: 1280px) {
     .navbar-header a{
       font-size: 34px;
-    }
-    .navbar-header.tiny a{
-        font-size: 26px;
     }
 }
 .navbar-inverse .navbar-brand, .navbar-inverse span {
@@ -61,11 +55,10 @@
   font-size: 24px;
   position: fixed;
   cursor: pointer;
-  transition: .3s;
+  transition: .2s;
 }
 #menu:hover {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-  transform: skewX(-10deg) translateZ(0);
 }
 .sidenav {
     height: 100%;
@@ -74,7 +67,7 @@
     z-index: 100000;
     top: 0;
     left: 0;
-    background-color: #fbfbfb;
+    background-color: #111;
     overflow-x: hidden;
     transition: 0.7s;
     padding-top: 60px;
@@ -83,20 +76,14 @@
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 20px;
-    color: #333;
-    font-family: Raleway;
+    font-size: 25px;
+    color: #818181;
     display: block;
-    border-bottom: 1px solid #ddd;
     transition: 0.3s;
-}
-.sidenav a:last-child {
-  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3);
 }
 
 .sidenav a:hover, .offcanvas a:focus{
-  text-shadow: 1px 1px 3px #bbb;
-  color: #000;
+    color: #f1f1f1;
 }
 
 .sidenav .closebtn {
@@ -104,21 +91,17 @@
     top: 0;
     float:right;
     color: #fff;
-    font-size: 72px;
+    font-size: 36px;
 }
 
-@media(min-width: 320px) {
+@media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 26px;}
+  .sidenav a {font-size: 18px;}
 }
-@media(min-width:60em){
-  html{font-size: 90%;}
-}
+
 body {
   font-family: "roboto light";
   color: #000;
-  font-size: 16px;
-  line-height: 1.2;
   position: relative;
   background: #e3dbce;
   /*background: #ffffde url('images/bg b.jpg');*/
@@ -147,18 +130,12 @@ nav .glyphicon{
 .login-btn:hover {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
-.btn-primary {
-  background-color: #3f5a5f;
-  border-color: #20412c;
-  transition: .2s;
-}
-.text_danger {
-  color: #bd2122;/*beautiful dark red*/
-  font-weight: bolder;
-  font-size: 14px;
-}
 
-
+.parallax-window {
+    height: 300px;
+    background: transparent;
+    transform: skewY(-3deg) translateZ(0);
+}
 .svg-wrapper {
   height: 60px;
   margin: 0 auto;
@@ -166,32 +143,31 @@ nav .glyphicon{
   top: 50%;
   left: auto;
   transform: translateY(-50%);
-  width: 280px;
+  width: 320px;
 }
 
 .shape {
   fill: transparent;
-  stroke-dasharray: 120 540;
+  stroke-dasharray: 140 540;
   stroke-dashoffset: -474;
   stroke-width: 8px;
   stroke: #d94362;
 }
 
 .text {
-  color: #333;
+  color: #fff;
   font-family: 'Roboto Condensed';
   font-size: 22px;
   letter-spacing: 8px;
   line-height: 32px;
   position: relative;
   top: -48px;
-  left: 11px;
-  transition: all .5s;
+  left: 110px;
 }
 
 @keyframes draw {
   0% {
-    stroke-dasharray: 120 540;
+    stroke-dasharray: 140 540;
     stroke-dashoffset: -474;
     stroke-width: 8px;
   }
@@ -201,20 +177,20 @@ nav .glyphicon{
     stroke-width: 9px;
   }
 }
-@keyframes antidraw {
-  0% {
-    stroke-dasharray: 760;
-    stroke-dashoffset: 0;
-    stroke-width: 9px;
-  }
-  100% {
-    stroke-dasharray: 120 540;
-    stroke-dashoffset: -474;
-    stroke-width: 8px;
-  }
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
 }
 
-
+#text1 {
+  color: #fff;
+  text-shadow: 20px 50px 100px #222;
+}
+#text2 {
+  color: #222;
+  text-shadow: 20px 50px 100px #000;
+}
 .container {
   padding:60px 30px;
   margin-top: 50px;
@@ -222,7 +198,7 @@ nav .glyphicon{
 }
 .container>p.lead {
   letter-spacing: 2px;
-  font-family:playfair display;
+  font-family:landliebe;
   font-size:32px;
 }
 .home-illu{
@@ -231,16 +207,14 @@ nav .glyphicon{
   position: relative;
   overflow: hidden;
   padding: 5px;
-  perspective: 100px;
 }
 .home-illu p {
   padding: 10px 20px;
-  font-size: 20px;
 }
 .home-illu img {
 padding: 10px 7px;
   max-width: 100%;
-  transition: all .26s;
+  transition: all 0.3s;
   position: relative;
   z-index: -1;
   cursor: pointer;
@@ -265,7 +239,6 @@ padding: 10px 7px;
 }
 #features p {
   color: #ffffde; // cool white
-  font-size: 18px;
 }
 .hero-link:hover {
   text-decoration: none;
@@ -274,13 +247,12 @@ padding: 10px 7px;
   border-radius: 6px;
   background: #CFD1D3;//gray
 }
-
 .hero-link {
   color: #253039;/*slack inspired*/
   letter-spacing: -1px;
   font-family: roboto;
   vertical-align: middle;
-  font-size: 20px;
+  font-size: 16px;
   padding: 6px;
   display: inline-block;
 }
@@ -289,49 +261,22 @@ padding: 10px 7px;
   -webkit-font-smoothing:antialiased;
   /*tilted*/
 }
-hr{
-  background: #333;
-  height: 1px;
+.hr1{
+  background: #000;
+  height: 2px;
 }
 .modal-parent {
   position: absolute;
 }
-
-.parallax-window {
-    height: 300px;
-    background: transparent;
-    transition: all .3s;
-}
-
 .parallax-text {
-  text-align: center;
-  margin-top: 130px;
-  vertical-align: middle;
-  padding: 7px;
-  overflow: hidden;
   font-family: playfair display;
-  border-radius: 5px;
+  text-align: center;
+  margin: 50px auto 10px;
+  padding: 10px;
   font-weight: bold;
-  font-size: 24px;
-  transition: all .3s;
+  font-size: 56px;
+  overflow: hidden;
 }
-.parallax-text:hover {
-  letter-spacing: 10px;
-  font-size: 32px;
-  margin-top: 120px;
-  padding: 8px;
-}
-#text1 {
-  color: #fff;
-  text-shadow: 20px 50px 100px #222;
-  background: #222;
-}
-#text2 {
-  color: #222;
-  background: #fff;
-  text-shadow: 20px 50px 100px #000;
-}
-
 .modal-content {
   background: url('images/bg l.jpg');
   padding: 5px;
@@ -343,7 +288,6 @@ hr{
   padding: 2px;
 }
 .modal-body {
-  position: relative;
   border: 2px dashed #222;
   border-radius: 4px;
   box-sizing: border-box;
@@ -399,114 +343,7 @@ hr{
  * Blog posts
  */
 
-/*LOG-oUT chat*/
 
-.chatblur{
-    width: 300px;
-    padding: 15px;
-    margin: 10px auto;
-    perspective:150px;
-    left: 0px;
-}
-
-.chatblur:before {
-  content: "";
-  position: absolute;
-  z-index: -2;
-  display: block;
-  right: 25px;
-  bottom: 25px;
-  padding: 14px;
-  margin: 0px -24px auto;
-  background-image: url('images/blur-img.jpg');
-  width: 320px;
-  height: 400px;
-  -webkit-filter: blur(2px);
-  -moz-filter: blur(2px);
-  -o-filter: blur(2px);
-  -ms-filter: blur(2px);
-  filter: blur(2px);
-}
-.chatblur:hover::before{
-  animation: .3s simpleshake linear;
-  cursor: pointer;
-}
-@keyframes simpleshake {
-  0% {
-  transform: rotateY(0deg);
-  }
-  25% {
-    transform: rotateY(-3deg);
-  }
-  75% {
-    transform: rotateY(0deg);
-  }
-  75% {
-    transform: rotateY(3deg);
-  }
-}/*same animation is to be used to alert an error*/
-.bubble{
-    background-color: #F2F2F2;
-    border-radius: 5px;
-    position: relative;
-    filter: drop-shadow(8px 8px 10px #3a3e49);
-    display: inline-block;
-    padding: 10px 20px;
-    vertical-align: top;
-}
-div.bubble {
-    direction: ltr;
-    font-family:sunday;
-    webkit-user-select: none; /* Chrome, Opera, Safari */
-    moz-user-select: none; /* Firefox 2+ */
-    ms-user-select: none; /* IE 10+ */
-    user-select: none; /* Standard syntax*/
-    /*This property is used to prevent text from selection/*/
-    transition: all .3s ease;
-    transform: rotateX(5deg);
-    left: -10px;
-    top: -30px;
-    font-size: 16px;
-    bottom: 22px;
-}
-div.bubble:hover {
-  direction: rtl;
-  unicode-bidi: bidi-override;
-}
-.bubble:before {
-    background-color: #F2F2F2;
-    content: "\00a0";
-    display: block;
-    height: 16px;
-    position: absolute;
-    top: 11px;
-    transform:             rotate( 29deg ) skew( -35deg );
-        -moz-transform:    rotate( 29deg ) skew( -35deg );
-        -ms-transform:     rotate( 29deg ) skew( -35deg );
-        -o-transform:      rotate( 29deg ) skew( -35deg );
-        -webkit-transform: rotate( 29deg ) skew( -35deg );
-    width:  20px;
-}
-
-.me {
-    float: left;
-    margin: 10px 12px;
-}
-
-.me::before {
-    box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4 );
-    left: -9px;
-}
-
-.you {
-    float: right;
-    margin: 10px 12px;
-}
-
-.you::before {
-    box-shadow: 2px -2px 2px 0 rgba( 178, 178, 178, .4 );
-    right: -9px;
-}
 
 /*
  * Footer
@@ -521,21 +358,22 @@ div.bubble:hover {
   text-align: center;
   background: #353535;
   border-top: 1px solid #e5e5e5;
+  position: relative;
 }
 
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
-.text-footer {
+.text-left {
   margin: 0 auto;
   display: block;
   text-align: center;
 }
-.text-footer a{
+.text-left a{
   text-transform: uppercase;
   transition: all .2s cubic-bezier(.26, .56, .54, .92);
   color:#ffffde;
-  font-family: baron neue;
+  border-radius: 20px;
   background: #353535;
   width: 200px;
   height: 40px;
@@ -545,20 +383,9 @@ div.bubble:hover {
   margin: 5px;
   text-decoration: none;
 }
-.text-footer a:last-child {
+.text-left a:hover {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
+  font-family: gagalin;
+  letter-spacing: 2px;
   transform: scale(1.1);
-}
-.text-footer a:last-child:hover {
-  font-family: baron neue;
-  letter-spacing:normal;
-}
-.text-footer a:hover {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-  letter-spacing: 1px;
-}
-
-ul {
-    list-style-image: url('arrow.svg');
 }
